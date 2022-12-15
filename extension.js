@@ -6,14 +6,20 @@ const fetch = require("node-fetch");
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 
-var statusBarPriceItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 9999);
+var config = vscode.workspace.getConfiguration("elektri-hind");
+
+if (config.alignment == "left") {
+	var alignment = vscode.StatusBarAlignment.Left;
+} else {
+	var alignment = vscode.StatusBarAlignment.Right;
+}
+
+var statusBarPriceItem = vscode.window.createStatusBarItem(alignment, config.alignmentPriority);
 
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate() {
-	getData();
-
+function activate(context) {
 	var nextDate = new Date();
 
 	if (nextDate.getMinutes() === 0) {
@@ -27,6 +33,14 @@ function activate() {
 
 		setTimeout(getData, difference);
 	}
+
+	const disposable = vscode.commands.registerCommand("elektri-hind.reload", () => {
+		reloadStatusBarItem();
+	});
+
+	context.subscriptions.push(disposable);
+
+	getData();
 }
 
 // This method is called when your extension is deactivated
@@ -35,9 +49,9 @@ function deactivate() {
 }
 
 function setStatusBarItem(price) {
-	statusBarPriceItem.text = price.toFixed(5).toString() + " €/kWh";
+	statusBarPriceItem.text = price.toFixed(config.decimalPoints).toString() + " €/kWh";
 
-	statusBarPriceItem.tooltip = "Current electricity price";
+	statusBarPriceItem.tooltip = "Current electricity price (" + price.toString() + " €/kWh)";
 
 	statusBarPriceItem.show();
 }
@@ -47,6 +61,22 @@ async function getData() {
 	const data = await response.json();
 
 	setStatusBarItem(data.data[0].price / 1000, true);
+}
+
+function reloadStatusBarItem() {
+	statusBarPriceItem.dispose();
+
+	config = vscode.workspace.getConfiguration("elektri-hind");
+
+	if (config.alignment == "left") {
+		alignment = vscode.StatusBarAlignment.Left;
+	} else {
+		alignment = vscode.StatusBarAlignment.Right;
+	}
+
+	statusBarPriceItem = vscode.window.createStatusBarItem(alignment, config.alignmentPriority);
+
+	getData();
 }
 
 module.exports = {
