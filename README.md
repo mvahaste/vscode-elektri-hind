@@ -1,4 +1,4 @@
-# elektri-hind README
+# VSCode elektri hind
 
 Jälgi elektri hinda laivis.
 
