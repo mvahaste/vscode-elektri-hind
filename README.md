@@ -8,4 +8,4 @@ _VSCode status bar_-i tekst, näitab laivis elektri hinda.
 
 ## Preview
 
-![Preview](preview.png)
+![Preview](https://raw.githubusercontent.com/mvahaste/vscode-elektri-hind/main/preview.pngpreview.png)
