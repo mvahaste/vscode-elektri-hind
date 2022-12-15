@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 
-var statusBarPriceItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 999);
+var statusBarPriceItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 9999);
 
 /**
  * @param {vscode.ExtensionContext} context

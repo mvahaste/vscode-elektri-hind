@@ -1,9 +1,10 @@
 {
 	"name": "elektri-hind",
 	"displayName": "Elektri hind",
-	"description": "Jälgi laivis kuidas raha põleb",
+	"description": "Jälgi laivis elektri hinda (€/kWh)",
 	"version": "0.0.1",
 	"publisher": "mvahaste",
+	"icon": "icon.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mvahaste/vscode-elektri-hind.git"
