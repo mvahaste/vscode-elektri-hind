@@ -35,7 +35,7 @@ function deactivate() {
 }
 
 function setStatusBarItem(price) {
-	statusBarPriceItem.text = price.toString() + " €/kWh";
+	statusBarPriceItem.text = price.toFixed(5).toString() + " €/kWh";
 
 	statusBarPriceItem.tooltip = "Current electricity price";
 
