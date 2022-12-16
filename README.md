@@ -1,6 +1,6 @@
 # VSCode elektri hind
 
-Jälgi elektri hinda laivis.
+Live elektri hind VSCode _status bar_-is.
 
 ## Features
 
