@@ -49,9 +49,9 @@ function deactivate() {
 }
 
 function setStatusBarItem(price) {
-	statusBarPriceItem.text = price.toFixed(config.decimalPoints).toString() + " €/kWh";
+	statusBarPriceItem.text = price.toFixed(config.decimalPointsStatusBar).toString() + " €/kWh";
 
-	statusBarPriceItem.tooltip = "Current electricity price (" + price.toString() + " €/kWh)";
+	statusBarPriceItem.tooltip = "Current electricity price (" + price.toFixed(config.decimalPointsTooltip).toString() + " €/kWh)";
 
 	statusBarPriceItem.show();
 }

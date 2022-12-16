@@ -2,7 +2,7 @@
 	"name": "elektri-hind",
 	"displayName": "Elektri hind",
 	"description": "Jälgi laivis elektri hinda (€/kWh)",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"publisher": "mvahaste",
 	"icon": "icon.png",
 	"repository": {
@@ -23,12 +23,19 @@
 		"configuration": {
 			"title": "Elektri hind",
 			"properties": {
-				"elektri-hind.decimalPoints": {
+				"elektri-hind.decimalPointsStatusBar": {
 					"type": "integer",
 					"default": 2,
 					"maximum": 5,
 					"minimum": 1,
-					"description": "How many decimal points to show."
+					"description": "How many decimal points to show in the status bar."
+				},
+				"elektri-hind.decimalPointsTooltip": {
+					"type": "integer",
+					"default": 5,
+					"maximum": 9,
+					"minimum": 1,
+					"description": "How many decimal points to show in the tooltip."
 				},
 				"elektri-hind.alignment": {
 					"type": "string",
