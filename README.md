@@ -10,4 +10,6 @@ Asukohta ja komakohtade arvu saab muuta.
 
 ## Preview
 
-![Preview](https://github.com/mvahaste/vscode-elektri-hind/blob/main/preview.png)
+[//]: ![Preview](https://github.com/mvahaste/vscode-elektri-hind/blob/main/preview.png)
+
+![Preview](preview.png)
