@@ -1,6 +1,6 @@
 # VSCode elektri hind
 
-Jälgi elektri hinda laivis.
+Live elektri hind VSCode _status bar_-is.
 
 ## Features
 
@@ -10,4 +10,4 @@ Asukohta ja komakohtade arvu saab muuta.
 
 ## Preview
 
-![Preview](https://github.com/mvahaste/vscode-elektri-hind/blob/main/preview.png)
+![Preview](https://raw.githubusercontent.com/mvahaste/vscode-elektri-hind/main/preview.png)
