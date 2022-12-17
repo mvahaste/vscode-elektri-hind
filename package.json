@@ -2,7 +2,7 @@
 	"name": "elektri-hind",
 	"displayName": "Elektri hind",
 	"description": "Jälgi laivis elektri hinda (€/kWh)",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"publisher": "mvahaste",
 	"icon": "icon.png",
 	"repository": {
