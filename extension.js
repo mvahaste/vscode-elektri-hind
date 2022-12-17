@@ -20,26 +20,33 @@ var statusBarPriceItem = vscode.window.createStatusBarItem(alignment, config.ali
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
+	// Hourly reload
 	var nextDate = new Date();
 
 	if (nextDate.getMinutes() === 0) {
+		// Fetch if full hour
 		getData();
 	} else {
+		// Else get time of next full hour
 		nextDate.setHours(nextDate.getHours() + 1);
 		nextDate.setMinutes(0);
 		nextDate.setSeconds(0);
 
+		// Difference between now and the next full hour
 		var difference = nextDate - new Date();
 
+		// Fetch timeout until next full hour
 		setTimeout(getData, difference);
 	}
 
+	// Reload command
 	const disposable = vscode.commands.registerCommand("elektri-hind.reload", () => {
 		reloadStatusBarItem();
 	});
 
 	context.subscriptions.push(disposable);
 
+	// First fetch and creation
 	getData();
 }
 
